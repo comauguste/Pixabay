@@ -1,4 +1,4 @@
-package com.wayfair.labs.pixabay;
+package com.wayfair.labs.pixabay.searchpage.adapter;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.facebook.drawee.view.SimpleDraweeView;
+import com.wayfair.labs.pixabay.R;
+import com.wayfair.labs.pixabay.data.network.model.Photo;
 
 import java.util.List;
 

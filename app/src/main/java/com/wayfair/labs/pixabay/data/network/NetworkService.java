@@ -1,4 +1,4 @@
-package com.wayfair.labs.pixabay;
+package com.wayfair.labs.pixabay.data.network;
 
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;

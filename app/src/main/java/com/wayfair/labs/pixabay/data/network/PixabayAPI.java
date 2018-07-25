@@ -1,5 +1,7 @@
-package com.wayfair.labs.pixabay;
+package com.wayfair.labs.pixabay.data.network;
 
+
+import com.wayfair.labs.pixabay.data.network.model.Photos;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

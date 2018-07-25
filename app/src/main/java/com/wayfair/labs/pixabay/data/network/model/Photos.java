@@ -1,5 +1,5 @@
 
-package com.wayfair.labs.pixabay;
+package com.wayfair.labs.pixabay.data.network.model;
 
 import java.util.List;
 import com.google.gson.annotations.Expose;
