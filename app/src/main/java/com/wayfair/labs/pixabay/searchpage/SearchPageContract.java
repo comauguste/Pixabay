@@ -9,7 +9,6 @@ import java.util.List;
 public interface SearchPageContract {
 
     interface View {
-        FragmentManager getCustomFragmentManager();
         void displayPhotos(List<Photo> photos);
         void updateProgressBarVisibility(int visibility);
         void showToastMessage(String message);
@@ -20,7 +19,6 @@ public interface SearchPageContract {
         void fetchPhotos(final String searchTerms);
         void onPhotoRetrievedSuccesffuly(List<Photo> photos);
         void onPhotoRetrievedFailed(Throwable throwable);
-        void goBack();
     }
 
     interface Model {

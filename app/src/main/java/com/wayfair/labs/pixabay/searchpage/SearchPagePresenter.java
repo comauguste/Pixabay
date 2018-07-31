@@ -3,7 +3,6 @@ package com.wayfair.labs.pixabay.searchpage;
 import android.view.View;
 
 import com.wayfair.labs.pixabay.data.network.model.Photo;
-import com.wayfair.labs.pixabay.util.Navigator;
 
 import java.util.List;
 
@@ -12,13 +11,11 @@ import timber.log.Timber;
 public class SearchPagePresenter implements SearchPageContract.Presenter {
     private SearchPageContract.View view;
     private SearchPageContract.Model model;
-    private Navigator navigator;
     private String searchTerms;
 
-    public SearchPagePresenter(SearchPageFragment view) {
+    SearchPagePresenter(SearchPageFragment view) {
         this.view = view;
         this.model = new SearchPageModel(this);
-        this.navigator = new Navigator(view.getCustomFragmentManager());
         searchTerms = "";
     }
 
@@ -43,10 +40,5 @@ public class SearchPagePresenter implements SearchPageContract.Presenter {
     @Override
     public void onPhotoRetrievedFailed(Throwable throwable) {
         Timber.e(throwable);
-    }
-
-    @Override
-    public void goBack() {
-        navigator.goBack();
     }
 }

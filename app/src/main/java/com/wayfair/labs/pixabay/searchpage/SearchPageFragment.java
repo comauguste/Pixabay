@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
@@ -22,6 +21,7 @@ import com.wayfair.labs.pixabay.searchpage.adapter.ImageGalleryAdapter;
 import java.util.List;
 
 public class SearchPageFragment extends Fragment implements SearchPageContract.View {
+    public static final String SEARCH_PAGE_TAG = "searchPage";
     private String searchTerms;
     private RecyclerView recyclerView;
     private ImageButton backButton;
@@ -64,7 +64,7 @@ public class SearchPageFragment extends Fragment implements SearchPageContract.V
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                presenter.goBack();
+                getFragmentManager().popBackStackImmediate();
             }
         });
         return view;
@@ -77,12 +77,6 @@ public class SearchPageFragment extends Fragment implements SearchPageContract.V
             searchView.setQuery(searchTerms, false);
             presenter.fetchPhotos(searchTerms);
         }
-    }
-
-
-    @Override
-    public FragmentManager getCustomFragmentManager() {
-        return getFragmentManager();
     }
 
     @Override

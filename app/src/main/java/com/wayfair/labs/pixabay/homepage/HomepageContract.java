@@ -1,10 +1,8 @@
 package com.wayfair.labs.pixabay.homepage;
 
-import android.support.v4.app.FragmentManager;
-
 public interface HomepageContract {
     interface View{
-        FragmentManager getCustomFragmentManager();
+        void goToSearchPage(String query);
     }
 
     interface Presenter{

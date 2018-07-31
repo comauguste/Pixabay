@@ -4,13 +4,15 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.SearchView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.wayfair.labs.pixabay.R;
+import com.wayfair.labs.pixabay.searchpage.SearchPageFragment;
+
+import static com.wayfair.labs.pixabay.searchpage.SearchPageFragment.SEARCH_PAGE_TAG;
 
 public class HomepageFragment extends Fragment implements HomepageContract.View {
 
@@ -45,9 +47,11 @@ public class HomepageFragment extends Fragment implements HomepageContract.View 
         return view;
     }
 
-
     @Override
-    public FragmentManager getCustomFragmentManager() {
-        return getFragmentManager();
+    public void goToSearchPage(String query) {
+        getFragmentManager().beginTransaction()
+                .replace(R.id.fragment_container, SearchPageFragment.newInstance(query))
+                .addToBackStack(SEARCH_PAGE_TAG)
+                .commit();
     }
 }
