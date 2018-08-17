@@ -39,7 +39,7 @@ public class ImageGalleryAdapter extends RecyclerView.Adapter<ImageGalleryAdapte
 
     public void clear() {
         final int size = photos.size();
-        if(size > 0){
+        if (size > 0) {
             photos.clear();
             notifyItemRangeRemoved(0, size);
         }

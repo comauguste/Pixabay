@@ -28,7 +28,7 @@ public class NetworkService {
             HttpUrl url = request.url().newBuilder()
                     .addQueryParameter("key", API_KEY)
                     .addQueryParameter("per_page", "50")
-                    .addQueryParameter("image_type","photo").build();
+                    .addQueryParameter("image_type", "photo").build();
             request = request.newBuilder().url(url)
                     .build();
             return chain.proceed(request);
