@@ -13,7 +13,6 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-
 import com.wayfair.labs.pixabay.R;
 import com.wayfair.labs.pixabay.data.network.model.Photo;
 import com.wayfair.labs.pixabay.searchpage.adapter.ImageGalleryAdapter;
@@ -31,7 +30,8 @@ public class SearchPageFragment extends Fragment implements SearchPageContract.V
     private SearchPageContract.Presenter presenter;
 
 
-    public static SearchPageFragment newInstance(String searchTerms) {
+    public static SearchPageFragment newInstance( String searchTerms )
+    {
         SearchPageFragment fragment = new SearchPageFragment();
         fragment.searchTerms = searchTerms;
         return fragment;
