@@ -31,7 +31,8 @@ public class SearchPageFragment extends Fragment implements SearchPageContract.V
     private SearchPageContract.Presenter presenter;
 
 
-    public static SearchPageFragment newInstance(String searchTerms) {
+    public static SearchPageFragment newInstance(String searchTerms)
+    {
         SearchPageFragment fragment = new SearchPageFragment();
         fragment.searchTerms = searchTerms;
         return fragment;
